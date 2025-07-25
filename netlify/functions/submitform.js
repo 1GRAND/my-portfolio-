@@ -12,16 +12,16 @@ exports.handler = async (event) => {
 
   const { employerName, employerEmail, employerMessage } = data;
 
-  // Example: log to server or write to storage
   console.log("New form submission:");
   console.log("Name:", employerName);
   console.log("Email:", employerEmail);
   console.log("Message:", employerMessage);
 
-  // You could integrate email sending here using services like SendGrid or Nodemailer
-
+  // 👇 Redirect after success
   return {
-    statusCode: 200,
-    body: JSON.stringify({ message: 'Form submitted successfully!' }),
+    statusCode: 302,
+    headers: {
+      Location: '/thankyou.html',
+    },
   };
 };
