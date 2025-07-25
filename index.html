@@ -103,15 +103,18 @@
 <section class="hire-me" id="HireMe">
   <div class="glass-box reveal">
     <h2 style="font-size: 2rem; margin-bottom: 20px;">Hire Me</h2>
-    <form class="hire-form" method="POST" action="/.netlify/functions/submitForm" data-netlify="true" netlify-honeypot="bot-field">
-      <h4>Name</h4>
-      <input type="text" placeholder="Your Name" name="employerName" required>
-      <h4>Email</h4>
-      <input type="text" placeholder="@gmail.com" name="employerEmail" required>
-      <h4>Message</h4>
-      <textarea placeholder="Your Message" name="employerMessage" rows="4" required></textarea>
-      <button type="submit">Send</button>
-    </form>
+  <form id="hireForm" class="hire-form">
+  <h4>Name</h4>
+  <input type="text" placeholder="Your Name" name="employerName" required>
+
+  <h4>Email</h4>
+  <input type="email" placeholder="@gmail.com" name="employerEmail" required>
+
+  <h4>Message</h4>
+  <textarea placeholder="Your Message" name="employerMessage" rows="4" required></textarea>
+
+  <button type="submit">Send</button>
+</form>
  <div class="social-links">
   <a href="https://www.youtube.com/channel/UCJsemoB8K-Bd3Zk9qIxKOWA"><i class="fab fa-youtube"></i></a>
   <a href=""><i class="fab fa-git"></i></a>
@@ -144,6 +147,35 @@
   });
   backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+<script>
+  document.getElementById('hireForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = {
+      employerName: form.employerName.value,
+      employerEmail: form.employerEmail.value,
+      employerMessage: form.employerMessage.value
+    };
+
+    try {
+      const response = await fetch('/.netlify/functions/submitForm', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (response.status === 302 || response.redirected) {
+        window.location.href = '/thankyou.html';
+      } else {
+        alert('Form submission failed: ' + response.statusText);
+      }
+    } catch (error) {
+      console.error(error);
+      alert('There was an error submitting the form.');
+    }
   });
 </script>
 </body>
