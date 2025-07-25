@@ -146,5 +146,33 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
+<script>
+  document.getElementById('hireForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = {
+      employerName: form.employerName.value,
+      employerEmail: form.employerEmail.value,
+      employerMessage: form.employerMessage.value
+    };
+
+    try {
+      const response = await fetch('/.netlify/functions/submitForm', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        window.location.href = '/thankyou.html'; // ✅ redirect manually
+      } else {
+        alert('Form submission failed.');
+      }
+    } catch (err) {
+      alert('An error occurred: ' + err.message);
+    }
+  });
+</script>
 </body>
 </html>
