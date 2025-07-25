@@ -1,0 +1,150 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/NEW DAWN.CSS') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <div class="about-content reveal">...</div>
+    <script src="new dawn.js"></script>
+    <link rel="stylesheet" href="NEW DAWN.CSS">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="new-dawn.css" />
+</head>
+<body>
+  <nav>
+    <h1 class="logo" style="font-family: Arial, Helvetica, sans-serif; color: rgb(0, 255, 255);" >My Portfolio</h1>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <ul id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#hire me">Hire Me</a></li>
+      <li class="dropdown">
+        <a href="#portfolio" class="dropdown-toggle">Portfolio ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="#past">Past</a></li>
+          <li><a href="#present">Present</a></li>
+          <li><a href="#future">Future</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <section id="home" class="home-section">
+  <div class="home-content">
+    <h2>👋🏾 Welcome to My World</h2>
+    <h3>Hi, I’m <span class="highlight">Ikani Joseph</span></h3>
+    <p>
+      A passionate <strong>Cybersecurity Enthusiast</strong> on a mission to secure the digital future.
+      <br><br>
+      From mastering ethical hacking to exploring real-world threats, I'm actively building the skills and mindset to defend what matters.
+      <br><br>
+      This portfolio is a reflection of my growth, my curiosity, and my journey into cybersecurity.
+      <br><br>
+      <em>I’m not just preparing for a career — I’m preparing to make an impact.</em>
+    </p>
+    <p class="tagline">Let’s connect, collaborate, or challenge the system — securely.</p>
+  </div>
+</section>
+<section id="about" class="about-section">
+  <div class="about-content">
+    <h2>🧠 About Me</h2>
+    <p><strong>I'm Ikani Joseph</strong>, a curious mind fueled by a deep interest in <strong>Cybersecurity</strong> and how technology shapes our world.</p>
+    
+    <p>My journey into tech started with a simple question: <em>"How do things really work under the surface?"</em> That curiosity led me to explore the fundamentals of hacking, digital defense, and system security.</p>
+    
+    <ul>
+      <li>🔐 Network and application security</li>
+      <li>🧰 Ethical hacking tools and practices</li>
+      <li>🛡️ Real-world cyber threats and how to counter them</li>
+    </ul>
+
+    <p>I’m not just gaining knowledge — I’m building a <strong>mindset</strong>: one that questions, tests, protects, and improves.</p>
+    
+    <blockquote>I'm driven by impact, not titles.  
+    By solutions, not just skills.  
+    And by growth, every single day.</blockquote>
+  </div>
+</section>
+<section class="portfolio-section" id="past">
+  <div class="portfolio-content">
+    <h2>Past Projects</h2>
+    <p>
+      Every expert starts with a foundation — and mine was built on curiosity, consistency, and code. These projects reflect my early journey into cybersecurity, where I learned to detect vulnerabilities, simulate attacks, and build basic defense mechanisms.
+    </p>
+    <ul class="project-list">
+      <li><strong>🔐 Keylogger Detector (Python):</strong> A tool designed to detect suspicious keystroke monitoring behavior.</li>
+      <li><strong>🧱 Basic Firewall Script (Linux IPTables):</strong> A simple firewall setup for local server protection.</li>
+      <li><strong>🕵️ Vulnerability Scanning Lab:</strong> Simulated internal scans using tools like Nmap and OpenVAS.</li>
+      <li><strong>📁 Secure File Encryption:</strong> A project for file encryption/decryption using Python’s cryptography library.</li>
+    </ul>
+  </div>
+</section>
+<section id="present">
+  <div class="glass-box">
+      <div class="portfolio-content" >
+      <h2>Present</h2>
+      <p>
+        Currently, I am focused on sharpening my skills in cybersecurity, working on real-world projects, and staying ahead of the ever-evolving digital threat landscape. I’m diving deep into penetration testing, network defense, and cyber awareness, while contributing to open-source security tools and participating in CTF challenges.
+      </p>
+    </div>
+  </div>
+</section>
+<section id="future" class="reveal">
+  <div class="glass-box">
+    <h2 class="glow-hover">The Future</h2>
+    <p>
+      My journey in cybersecurity is only just beginning. I am committed to mastering advanced threat analysis, ethical hacking, and AI-driven security solutions. My vision is to help secure critical infrastructures, educate the next generation of cyber defenders, and develop tools that protect digital lives globally.
+    </p>
+    <p>
+      The future is encrypted, decentralized, and secure — and I will be right at the center of it.
+    </p>
+  </div>
+</section>
+<section class="hire-me" id="HireMe">
+  <div class="glass-box reveal">
+    <h2 style="font-size: 2rem; margin-bottom: 20px;">Hire Me</h2>
+    <form class="hire-form" method="POST" action="/.netlify/functions/submitForm" data-netlify="true" netlify-honeypot="bot-field">
+      <h4>Name</h4>
+      <input type="text" placeholder="Your Name" name="employerName" required>
+      <h4>Email</h4>
+      <input type="text" placeholder="@gmail.com" name="employerEmail" required>
+      <h4>Message</h4>
+      <textarea placeholder="Your Message" name="employerMessage" rows="4" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+ <div class="social-links">
+  <a href="https://www.youtube.com/channel/UCJsemoB8K-Bd3Zk9qIxKOWA"><i class="fab fa-youtube"></i></a>
+  <a href=""><i class="fab fa-git"></i></a>
+  <a href="mailto:josephikani24@gmail.com"><i class="fas fa-envelope"></i></a>
+  <a href="https://wa.me/2348148514556"><i class="fab fa-whatsapp"></i></a>
+</div>
+
+</section>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  window.addEventListener('scroll', () => {
+    for (let i = 0; i < reveals.length; i++) {
+      const windowHeight = window.innerHeight;
+      const elementTop = reveals[i].getBoundingClientRect().top;
+      if (elementTop < windowHeight - 100) {
+        reveals[i].classList.add('active');
+      }
+    }
+  });
+  // Back-to-top button
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+</body>
+</html>
